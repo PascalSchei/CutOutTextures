@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Aspose.Drawing" Version="21.5.0" />
+  </ItemGroup>
+
 </Project>
