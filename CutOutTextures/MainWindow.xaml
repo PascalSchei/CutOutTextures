@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0,0,-7,0">
-        <Canvas x:Name="canvas1" Margin="368,65,45,42"/>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Canvas x:Name="canvas1" Background="Transparent" Margin="29,54,384,53" MouseLeftButtonUp="canvas1_MouseLeftButtonUp" Panel.ZIndex="10"/>
+        <Button Content="Button" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Click="Button_Click"  Panel.ZIndex="10"/>
+        <Border BorderThickness="1" Background="#FF205583"  Margin="70,70,0,0" Width="296" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top">
+            <Image x:Name="imageviewer" Margin="0,0,0,0" />
+        </Border>
     </Grid>
 </Window>
