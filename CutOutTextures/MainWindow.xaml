@@ -12,5 +12,7 @@
         <Border BorderThickness="1" Background="#FF205583"  Margin="70,70,0,0" Width="296" HorizontalAlignment="Left" Height="296" VerticalAlignment="Top">
             <Image x:Name="imageviewer" Margin="0,0,0,0" />
         </Border>
+        <Image x:Name="imageResult" Margin="455,71,58,69" />
+        <Button Content="Clear" HorizontalAlignment="Left" Margin="455,20,0,0" VerticalAlignment="Top" Click="Button_Click_1"  Panel.ZIndex="10"/>
     </Grid>
 </Window>

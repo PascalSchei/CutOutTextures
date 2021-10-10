@@ -34,6 +34,8 @@ namespace CutOutTextures {
                 openFile = new FileInfo(openFileDialog.FileName);
             }
             ShowImage();
+            viereck = new Viereck(canvas1);
+            canvas1.Children.Clear();
         }
 
         private void ShowImage() {
@@ -56,14 +58,24 @@ namespace CutOutTextures {
 
         private void GetBitmap() {
             if (viereck.defined) {
+
+                double zoom = imageviewer.ActualHeight / bitmap.Height;
                 Point a = canvas1.TranslatePoint(viereck.pointA.Value, imageviewer);
                 Point b = canvas1.TranslatePoint(viereck.pointB.Value, imageviewer);
                 Point c = canvas1.TranslatePoint(viereck.pointC.Value, imageviewer);
                 Point d = canvas1.TranslatePoint(viereck.pointD.Value, imageviewer);
-                BitmapTransformed a = new BitmapTransformed(bitmap, a, b, c, d);
+
+
+                BitmapTransformed transformed = new BitmapTransformed(bitmap, a, b, c, d, zoom);
+                imageResult.Source = transformed.resultImage;
             }
             
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            viereck = new Viereck(canvas1);
+            canvas1.Children.Clear();
         }
     }
 }
