@@ -19,9 +19,7 @@ namespace CutOutTextures {
 
         public BitmapTransformed(BitmapImage bitmap, System.Windows.Point a, System.Windows.Point b, System.Windows.Point c, System.Windows.Point d, double zoom) {
             originalPic = BitmapSourceToArray(bitmap);
-
-            //Problem: Bild ist in Originalgrösse, aber Punkte sind von Bildauschnitt
-            
+           
 
             pA = ConvertPoint(a, zoom);
             pB = ConvertPoint(b, zoom);
@@ -127,57 +125,6 @@ namespace CutOutTextures {
 
         private double Distance(Point a, Point b) {
             return a.Distance(b);
-        }
-    }
-
-    public static class PointExtension {
-
-        public static Point Plus(this Point pA, Point pB) {
-            return new Point(pB.X + pA.X, pB.Y + pA.Y);
-        }
-
-        public static Point Minus(this Point pA, Point pB) {
-            return new Point(pB.X - pA.X, pB.Y - pA.Y);
-        }
-
-        public static Point Multiply(this Point pA, int length) {
-            return new Point(pA.X * length, pA.Y * length);
-        }
-
-        public static Point Divided(this Point pA, int length) {
-            return new Point(pA.X / length, pA.Y / length);
-        }
-
-        public static double Distance(this Point a, Point b) {
-            double x2 = Math.Pow(a.X - b.X, 2);
-            double y2 = Math.Pow(a.Y - b.Y, 2);
-            double res = Math.Sqrt(x2 + y2);
-            return res;
-        }
-    }
-
-
-
-    public class PixelColor {
-        public byte Blue;
-        public byte Green;
-        public byte Red;
-        public byte Alpha;
-
-        public PixelColor(List<byte> pixelColor) {
-            Blue = pixelColor[0];
-            Green = pixelColor[1];
-            Red = pixelColor[2];
-            Alpha = pixelColor[3];
-        }
-
-        internal List<byte> GetValues() {
-            return new List<byte> {
-                Blue,
-                Green,
-                Red,
-                Alpha
-            };
         }
     }
 

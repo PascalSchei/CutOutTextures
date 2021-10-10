@@ -28,6 +28,9 @@ namespace CutOutTextures {
         private FileInfo openFile;
         private Viereck viereck;
 
+
+
+
         private void Button_Click(object sender, RoutedEventArgs e) {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true) {
